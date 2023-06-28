@@ -1,0 +1,324 @@
+@font-face { /*Importacion de fuente*/
+    font-family: Monserratadd;
+    src: url(Fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face { /*Importacion de fuente*/
+    font-family: Robotoadd;
+    src: url(Fonts/Roboto/Roboto-Regular.ttf);
+}
+*{  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Robotoadd;
+}
+.banner /*banner en donde esta el logo*/
+{
+    background-color: rgb(59, 59, 59);
+    border-bottom:1px solid #7b7393;
+    height:15vh;
+}
+.banner img{/*Logo en el banner en todas las paginas*/
+    height: 100%;
+    width: auto;
+}
+nav{ /*Menu de navegacion en todas las paginas*/
+    height: 7vh;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    background-color: rgb(59, 59, 59); 
+    text-align: center;
+    padding: 0.9%;
+}
+nav a{
+    color: #fff;
+}
+
+
+.pagina-1{ /*body en pagina 1*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: rgb(59, 59, 59);
+}
+.contenedor{/*contiene el formulario de registro e inicio en pagina 1*/
+    position: relative;
+    width: 60vw;
+    height: 70vh;
+    background-color: rgb(255, 252, 252);
+    box-shadow:0 4px 20px 0 rgba(0, 0, 0, 3);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 5%;
+}
+.contenedor::before{
+    content:"";
+    position: absolute;
+    top:0;
+    right: 50%;
+    width:100%;
+    height: 100%;
+    background: linear-gradient(-45deg,#f8f8f8,#d8d8d8);
+    z-index: 6;
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+}
+
+.registro-inicio{/*en pagina 1*/
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 5;
+}
+
+
+.forms-pagina-1 /*formulario en pagina1 y de registro*/
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    min-width: 240px;
+    padding: 0 20px;
+}
+
+.forms-pagina-1.form-inicio{ /**/
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    transition-delay: 1s;
+}
+
+.forms-pagina-1.form-registrarse{
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+    transition-delay: 1s;
+}
+
+.titulos-form{ /*titulos de iniciar sesion y registrarse en pagina 1 y registro*/
+    font-size: 30px;
+    margin-bottom: 5%;
+}
+
+.entradas{ /*inputs de formularios en pagina 1 y registro*/
+    height: 5vh;
+    width: 100%;
+    background-color: #ececec;
+    display: flex;
+    align-items: center;
+    margin:2%;
+    border-radius: 2px;
+    padding: 2%;
+}
+.entradas input{ /*inputs de la clase entrada en pagina 1 y registro*/
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+}
+
+.botones{ /*botones en pagina 1 y registro*/
+    height: 6vh;
+    width:10vw;
+    border: none;
+    background-color: #dbdbdb;
+    text-transform: uppercase;
+    margin: 5%;
+    border-radius: 2px;
+}
+
+.botones:hover{
+    background-color: rgb(90,90,90);
+    font-weight: 500;
+    color: #fff;
+}
+
+.cuadro-afuera{ /*donde se encuentra lo que se mueve en pagina1*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.cuadro-izq,.cuadro-der{ /*lo que se mueve en pagina1*/
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    min-width: 240px;
+    padding: 0 10px;
+    z-index: 6;
+}
+.info-pagina-1{ /*texto en el cuadro verde de registro y pagina1*/
+    padding-bottom: 5%;
+    line-height: 1.4;
+    transition: 0.8s ease-in-out;
+    
+}
+#subtitulo-inicio{ /*titulos de bienvenida en pagina1 y registro*/
+    padding-bottom: 1%;
+    font-size: 30px;
+}
+.imagen-pagina-1{ /*imagenes en la pagina de registro*/
+    width: 100%;
+    transition: 0.8s ease-in-out;
+}
+.cuadro-izq .imagen-pagina-1,
+.cuadro-izq .info-pagina-1{  /*cuadro para iniciar sesion en pagina de registro*/
+    transform: translateX(-250%);
+}
+
+.cuadro-der .imagen-pagina-1,
+.cuadro-der .info-pagina-1{  /*cuadro de registro en pagina1*/
+    transform: translateX(0);
+}
+
+.contenedor.registrar-momento::before{ 
+    transform: translateX(0);
+} 
+.contenedor.registrar-momento .cuadro-der .imagen-pagina-1,
+.contenedor.registrar-momento .cuadro-der .info-pagina-1{/*animacion para que se mueva la imagen y el texto en pagina 1*/
+    transform: translateX(250%);
+}
+.contenedor.registrar-momento .cuadro-izq .imagen-pagina-1,
+.contenedor.registrar-momento .cuadro-izq .info-pagina-1{/*animacion para que se mueva la imagen y el texto en pagina 1*/
+    transform: translateX(0);
+}
+
+
+.cuadro-izq{ /*para poder rellenar el formulario de inicio*/
+    pointer-events: none;
+}
+
+.contenedor.registrar-momento .cuadro-der{/*para poder rellenar el formulario de registro*/
+    pointer-events: none;
+}
+.contenedor.registrar-momento .cuadro-izq{/*para poder pasar a iniciar sesion desde el formulario de registro*/
+    pointer-events: all;
+}
+a{
+    color: #080808;
+    text-decoration: none;
+    font-weight: bold;
+}
+div input{ /*letra de los formularios diff*/
+    font-family: Monserratadd;
+}
+
+.inscripcion{/*seccion para registro en cursos*/
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #8b8b8b;
+}
+.contenedor-inscripcion{ /*cuadro donde esta el formulario de registro y su descripcion*/
+    width: 50vw;
+    height: 65vh;
+    display: flex;
+    margin-bottom: 10%; /*queria que estuviera mas arriba y esto sirvio*/
+    box-shadow:0 4px 20px 0 rgba(0, 0, 0, 3);
+    border-radius: 12px;
+    background-color: #fff;
+}
+.desc-curso{ /*div del lado izquierdo de formularios de registro*/
+    width: 50%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px 0 0 12px;
+    background-color: #d8d8d8;
+}
+.desc-curso div{ /*parrafo que muestra una pequeña descripcion y una imagen del curso*/
+    width: 70%;
+    text-align: center;
+    line-height: 1.5;
+}
+.desc-curso img{ /*imagen que describe el curso, esta al lado del formulario*/
+    width: 80%;
+}
+
+.form-curso{ /*formularios de los cursos*/
+    width: 60%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+}
+.form-curso input{ /*cuadros de entrada en el formulario*/
+    width: 80%;
+}
+.titulo-regis{/*encqabezado de los formularios en el centro*/
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: space-around;
+
+}
+.entradas-curso{ /*contenedor de los inputs del form*/
+    margin-left: 8%;
+}
+.info-de-registro{ /*para que el en el formulario el label se ve arriba del input*/
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 2%;
+}
+.info-de-registro input{ /*espacio de los inputs del formulario de registro*/
+    padding: 2%;
+    margin: 1%;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 6px #adabab;
+}
+
+.info-de-registro label{ /*etiquetas de los inputs del formulario de registro*/
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+.fechas-de-registro{
+    width: 83%;
+    padding: 1%;
+    background-color: #d8d8d8;
+
+}
+.fechas-de-registro input[type="radio"]{ /*circulitos del radio button*/
+    display: none;
+}
+.fechas-de-registro label{ /*etiquetas de las fechas en los formularios de registro*/
+    padding: 0.5%;
+    margin-right: 8%;
+    display: inline-block;
+}
+
+.fechas-de-registro label:hover{ /*etiquetas de las fechas de los formularios de registro*/
+    border-radius: 2px;
+    background-color: #bbbbbb;
+    transition: 0.2s;
+}
+
+#fecha-curso-1:checked ~ .fecha-1,
+#fecha-curso-2:checked ~ .fecha-2,
+#fecha-curso-3:checked ~ .fecha-3{ /*etiquetas para la fecha de los formularios de registro*/
+    background-color: #9c9c9c;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+footer{ /*footer en todas las paginas*/
+    background-color: #181818;
+    color:#fff;
+
+}
