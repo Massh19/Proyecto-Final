@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registro Curso Quimica</title>
+</head>
+<body>
+	<%String Nombre = request.getParameter("nombre");
+	String  Apellido = request.getParameter("apellido");
+	String Cedula = request.getParameter("cedula");
+	String Fecha = request.getParameter("fecha");
+	%>
+	
+	<%@page import="java.sql.*" %>
+	<%
+	
+	Class.forName("com.mysql.jdbc.Driver");
+	Connection dbconect = DriverManager. getConnection("jdbc:mysql://localhost:33065/Proyecto final","root","");
+	Statement dbstatement = dbconect.createStatement();
+	String insertarsql = "INSERT INTO quimica biologia (Nombre, Apellido, Cedula, Fecha inicio) VALUES ('" +Nombre+ "','" +Apellido+ "','" +Cedula+ "','" +Fecha+ ")";
+	dbstatement.executeUpdate(insertarsql);%>
+	<h1>REGISTRO COMPLEADO EXITOSAMENTE!!</h1>
+	<a href="Home.html">Volver</a>
+</body>
+</html>
